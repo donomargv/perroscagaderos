@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { Fragment, useState, useEffect } from 'react';
 import Formulario from './components/formulario'; // Asegúrate de que el nombre sea correcto
 import Cita from "./components/cita"; // Asegúrate de que el nombre sea correcto
@@ -7,15 +7,24 @@ import Cita from "./components/cita"; // Asegúrate de que el nombre sea correct
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
-  // Citas en local storage
-  const citasIniciales = JSON.parse(localStorage.getItem('citas')) || [];
+  // Estado para las citas
+  const [citas, guardarCitas] = useState([]);
 
-  // Arreglo de citas
-  const [citas, guardarCitas] = useState(citasIniciales);
+  // Use Effect para cargar citas desde local storage
+  useEffect(() => {
+    // Verificar si window está definido
+    if (typeof window !== 'undefined') {
+      const citasIniciales = JSON.parse(localStorage.getItem('citas')) || [];
+      guardarCitas(citasIniciales);
+    }
+  }, []); // Solo se ejecuta una vez al montar el componente
 
   // Use Effect para guardar citas en local storage cuando cambian
   useEffect(() => {
-    localStorage.setItem('citas', JSON.stringify(citas));
+    // Verificar si window está definido
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('citas', JSON.stringify(citas));
+    }
   }, [citas]);
 
   // Función que toma las citas actuales y agrega la nueva
