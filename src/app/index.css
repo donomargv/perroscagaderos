@@ -1,0 +1,117 @@
+/* Estilo general */
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+  min-height: 100%;
+  padding-bottom: 5rem;
+}
+
+h1, h2 {
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Staatliches', cursive;
+  letter-spacing: 1px;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex; /* Flexbox para disposición en columnas */
+  justify-content: space-between; /* Espaciado entre columnas */
+  align-items: flex-start; /* Alinear columnas en la parte superior */
+  margin: 0 auto; /* Centrar el contenedor */
+  max-width: 1200px; /* Ancho máximo */
+  padding: 0 20px; /* Espaciado lateral */
+}
+
+/* Columnas */
+.column {
+  flex: 1; /* Tomar el mismo espacio */
+  margin: 0 10px; /* Espacio entre columnas */
+
+  border-radius: 16px; /* Bordes más redondeados */
+  padding: 1.5rem; /* Espaciado interno */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  min-width: 300px; /* Asegurarte de que tengan un ancho mínimo */
+  max-width: 500px; /* Opcional: puedes ajustar esto */
+}
+
+/* Evitar margen en la última columna */
+.column:last-child {
+  margin-right: 0;
+}
+
+/* Lista de citas */
+.lista-citas {
+  margin-top: 2rem; /* Espacio entre el título y la lista */
+}
+
+/* Citas */
+.cita {
+  padding: 2rem;
+  background: white;
+  border-bottom: 1px solid #e1e1e1;
+  color: black;
+  border-radius: 8px; /* Bordes redondeados en las citas */
+}
+
+/* Estilos de botón */
+button {
+  background-color: #66b3ff; /* Color azul más claro */
+  color: white; /* Texto blanco */
+  padding: 1rem; /* Ajustar para que sea más grueso */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 1.2rem; /* Aumentar el tamaño de la fuente */
+  cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+  transition: background-color 0.3s ease; /* Transición suave */
+  width: 100%; /* Hacer el botón igual de ancho que el campo */
+}
+
+button:hover {
+  background-color: #4da6ff; /* Color azul más oscuro al pasar el ratón */
+}
+
+/* Estilos de error */
+.alerta-error {
+  background-color: white;
+  color: red;
+  padding: 1rem;
+  font-size: 1.5rem; /* Ajustado para que sea más legible */
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Staatliches', cursive;
+  border-radius: 5px; /* Bordes redondeados para el mensaje de error */
+}
+
+/* Estilos adicionales para el formulario */
+label {
+  color: white;
+  display: block; /* Hacer etiquetas de bloque para mayor claridad */
+  margin-bottom: 0.5rem; /* Espaciado inferior */
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  width: 100%; /* Ajustar a todo el ancho */
+}
+
+textarea {
+  height: 100px; /* Altura para el textarea */
+}
